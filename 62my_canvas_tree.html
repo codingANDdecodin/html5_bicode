@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+</head>
+<body>
+    <canvas id="tree" width="500px" height="500px" style="border: 1px solid;"></canvas>
+
+    <script>
+        var ref=document.getElementById("tree");
+        var ctx1= ref.getContext("2d");
+
+        ctx1.beginPath();
+
+        
+
+        
+        ctx1.beginPath();
+            ctx1.moveTo(0,300);
+          //  ctx.lineTo(380,400);
+            ctx1.quadraticCurveTo(200,450,220,370);
+            ctx1.quadraticCurveTo(350,200,500,300);
+           // ctx1.lineWidth='7';
+            ctx1.stroke();
+            ctx1.save();
+            ctx1.restore();
+      
+        
+        
+        
+        
+        function myroad(){
+            var ref=document.getElementById("tree");
+            var ctx= ref.getContext("2d");
+            ctx.save();
+            ctx.restore();
+            ctx.translate(100,400);
+
+                
+            ctx.moveTo(0,-300);
+            ctx.lineTo(-50,-250);
+            ctx.lineTo(-20,-250);
+            ctx.lineTo(-75,-200);
+            ctx.lineTo(-20,-200);
+            ctx.lineTo(-100,-150);
+
+            ctx.moveTo(0,-300);
+            ctx.lineTo(50,-250);
+            ctx.lineTo(20,-250);
+            ctx.lineTo(75,-200);
+            ctx.lineTo(20,-200);
+            ctx.lineTo(100,-150);
+
+            ctx.moveTo(-100,-150);
+            ctx.lineTo(100,-150);
+            ctx.fillStyle="green";
+            ctx.fill();
+
+            ctx.fillRect(-10,-150,30,50);
+            ctx.lineWidth='7';
+            ctx.stroke();
+
+
+        }
+        window.onload=myroad;
+
+       
+        
+        
+
+
+    </script>
+</body>
+</html>

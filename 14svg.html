@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grouping html</title>
+</head>
+<body>
+    <svg width="700",height="800" style="border: 1px soild red;">
+     <g  transform="translate(500,0) rotate(50) scale(0.7)" id="shapeGroup">
+        <rect x="10" y="20" height="80" width="80" style="fill: yellow; stroke-width:2 ;stroke: red;"/>
+
+        <circle cx="110" cy="80" r="40" stroke="green" stroke-width="2" fill="yellow" />
+
+        <rect x="20" y="10" height="70" width="70" fill="green" style="stroke: red; stroke: width 1px solid;"/>
+     </g>    
+
+     <!--it define content for future use. it has element name use-->
+     <defs>
+        <!-- <g id="shapeGroup">
+            <rect x="10" y="20" height="80" width="100" style="fill: yellow; stroke-width:2;stroke:red" />
+            <circle cx="120" cy="80" r="40" stroke="green" stroke-width="2" fill="yellow" />
+        </g> -->
+     </defs>
+     
+    </svg>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            margin-left: 500px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form action="" id="myForm">
+      <input type="text" name="ename"><br><br><br>
+      <input type="number" name="salary"><br><br><br>
+      <button onclick="setCookies()"> set cookies</button><button onclick="getCookies()">getCookies</button>
+
+    </form>
+
+    <script>
+        function setCookie(){
+            document.cookie="empname="+document.myForm.name.value+"expiered=friday, may-19-2023T12:00:00 UTF"
+        }
+    </script>
+</body>
+
+
+</html>

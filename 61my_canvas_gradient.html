@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="gradient" width="500px" height="500px" style="border: 1px solid;" ></canvas>
+    <script>
+        var ref=document.getElementById("gradient");
+        var ctx=ref.getContext("2d");
+
+        ctx.beginPath();
+        
+        var gr=ctx.createLinearGradient(0,0,100,0);
+        gr.addColorStop(0,"green");
+        gr.addColorStop(0.5,"red");
+
+        ctx.fillStyle=gr;
+        ctx.fillRect(10,10,100,100);
+        ctx.stroke();
+
+        ctx.beginPath();
+        var rg=ctx.createRadialGradient(10,10,60,20,20,180);
+        rg.addColorStop(1,"black");
+        rg.addColorStop(1,"yellow");
+
+        ctx.fillStyle=rg;
+        ctx.fillRect(50,50,200,200);
+        ctx.stroke();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codin gyaan</title>
+</head>
+<body>
+       <button onclick="mygeo()">get location</button>
+    <h1 id="myh1"></h1>
+    <script>
+        function mygeo(){
+                if(navigator.geolocation){
+                    console.log("supported");
+
+                    navigator.geolocation.getCurrentPosition(showPosition);
+
+                }
+                else{
+                    document.getElementById("myh1").innerHTML="not support";
+                }
+
+            function showPosition(position){
+                 document.getElementById("myh1").innerHTML="lattitude="+position.Coords.latitude+" <br>longitide = "+position.Coords.longitude;
+            }
+        
+        }
+          
+            // function showerr(err){
+            //     console.log(err);
+            // }
+    </script>
+</body>
+</html>

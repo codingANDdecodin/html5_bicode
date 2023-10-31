@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function clickCounter(){
+            if(typeof(Storage)!==undefined){
+                if(sessionStorage.clickCount){
+                    sessionStorage.clickCount=Number(sessionStorage.clickCount)+1;
+                }else{
+                    sessionStorage.clickCount=1;
+                }
+
+                document.getElementById("result").innerHTML="you have clicked on button"+sessionStorage.clickCount+"time(s)";
+
+            }else{
+                document.getElementById("result").innerHTML="sorry your brouser is not support web storage";
+            }
+           // console.log(sessionStorage.clickCount);
+        }
+    </script>
+
+    <p><button onclick="clickCounter()" type="button">click me</button></p>
+
+    <div id="result"></div>
+
+    <p>click the button to see the count incress</p>
+    <p>close the broser tab and try again the counter will continue to count(is not reset)(try to refresh it)</p>
+</body>
+</html>

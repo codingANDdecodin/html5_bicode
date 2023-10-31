@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text in canvas</title>
+</head>
+<body>
+    <canvas id="text" height="300px" width="400px" style="border: 1px solid red;"></canvas>
+
+    <script>
+        var ref=document.getElementById("text");
+        var ctx=ref.getContext("2d");
+
+        ctx.font="30px  bold solid";
+        ctx.fillStyle="red";
+        ctx.fillText("hii i am ajit",200,200);//
+    
+        ctx.strokeText("i am text",250,250);//(text,x,y)
+    
+
+        //ctx
+    </script>
+</body>
+</html>

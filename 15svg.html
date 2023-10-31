@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="700",height=1000>
+        <!-- <g  transform="translate(100,0) rotate(45) scale(0.6)" id="shapeGroup">
+           <rect x="10" y="20" height="80" width="80" style="fill: yellow; stroke-width:2 ;stroke: red;"/>
+   
+           <circle cx="120" cy="80" r="40" stroke="green" stroke-width="2" fill="yellow" >
+        </g>   
+   
+        it define content for future use. it has element name use -->
+        <!-- <defs> -->
+           <g id="shapeGroup">
+               <rect x="10" y="20" height="80" width="100" style="fill: yellow; stroke-width:2;stroke:red" />
+               <circle cx="120" cy="80" r="40" stroke="green" stroke-width="2" fill="yellow" />
+               <rect x="100" y="70" height="90" width="100" style="fill: yellow; stroke-width:2;stroke:aqua">
+               
+           </g>
+            
+        <!-- </defs> -->
+       
+       <use xlink:href="#shapeGroup" transform="translate(150,0) rotate(50) scale(0.5)" />
+
+       <use xlink:href="#shapeGroup" transform="translate(110,100) scale(0.4)"/>
+    </svg>
+       <!--<use xlink:href="#shapeGroup" transform="translate(60,80) scale(0.25)" />-->
+
+       
+</body>
+</html>

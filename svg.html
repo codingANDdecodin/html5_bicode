@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="300" height="300" style="border: 1px solid black;" >
+        <rect x="100" y="100" width="50px" height="50px" stroke="red" fill="yellow" stroke-width="5px"></rect>
+
+        
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid black;" >
+        <rect x="200" y="200"  style="width:50px; height:50px; fill: rgb(0, 255, 17); stroke-width:5px; stroke:rgb(115, 0, 255)"></rect>
+
+        <circle cx="250" cy="250" r="10px" style="fill: black; stroke-width:5px; stroke:red" ></circle>
+        
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid black;" >
+        <polygon points="200,10 250,190 160,210" style="stroke: red; stroke-width:5px; fill:yellow" ></polygon>
+        <!-- points="x,y x,y x,y" -->
+        <defs>
+          <g id="this">
+            <polygon points="200,10 250,190 160,210" style="stroke: red; stroke-width:5px; fill:yellow" ></polygon>
+          </g>
+        </defs>
+        <use xlink:href="#this" transform="translate(10,100) scale(0.8) rotate(50)" ></use>
+    </svg>
+
+    <svg width="300" height="300" style="border: 1px solid black;" >
+     <path d="M150 0
+     L75 200
+     L225 200
+     H260 550
+     Z"
+     ></path>
+        
+    </svg>
+</body>
+</html>

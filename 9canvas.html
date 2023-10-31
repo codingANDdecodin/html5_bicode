@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="trails" width="500px" height="600px" style="border: 1px solid;">
+    </canvas>
+
+    <script>
+        function drawtrail(){
+            var canvas=document.getElementById("trails");
+            var context=canvas.getContext("2d");
+             console.log(canvas);
+            context.save();
+            context.translate(130,250);
+            
+            context.drawImage(image1,50,40,200,200);//(img,x,y,width,height)
+            context.stroke(); 
+        }
+
+        var image1=new Image();
+        image1.src="me.gif";
+        image1.onload=function(){
+            drawtrail();
+        }
+    </script>
+</body>
+</html>

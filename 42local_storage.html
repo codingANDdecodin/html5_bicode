@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result" ></div>
+         <script>
+            //cheak brouser support
+
+            if(typeof(Storage)!=="undefined"){
+                //store
+                localStorage.setItem("lastname","tendulkar");
+
+                localStorage.setItem("product","laptop");
+
+                localStorage.setItem("loc","dehli");
+                //retrive
+                document.getElementById('result').innerHTML=localStorage.getItem("lastname");
+
+                document.write(localStorage.getItem("loc"))
+
+            }else{
+                document.getElementById("result").innerHTML="sorry your brouser is not support to web storage"
+
+            }
+         </script>
+    
+</body>
+</html>

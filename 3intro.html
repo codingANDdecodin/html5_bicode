@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          video{
+            width: 450px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+    <script src="5_Util.js"></script>
+</head>
+<body>
+   <video id="vd1" src="52pm.mp4" muted="true" controls=""></video>
+   <br><br>
+
+   <input type="button" value="play" id="btnplay">
+   <input type="button" value="forward" id="btnforward">
+   <input type="button" value="rewind" id="btnrewind">
+
+   <script>
+    var btn1,btn2,btn3,video1;
+    btn1=document.getElementById("btnplay");
+    btn2=document.getElementById("btnforward");
+    btn3=document.getElementById("btnrewind");
+
+
+    video1=document.getElementById("vd1");
+
+    function videoplay(){
+        if(video1.paused){
+            video1.play();
+            btn1.value="pause";
+        }
+        else if(!video1.paused){
+            video1.pause();
+            btn1.value="play";
+        }
+        
+    }
+    function videoforward(){
+        var value=3;
+        video1.currentTime+=value;
+    }
+    function videorewind(){
+        var value=-3;
+        video1.currentTime+=value;
+    }
+    function fun1(){
+       btn1.value="play";
+    }
+        EventUtil.addHandler(video1,"ended",fun1);
+        EventUtil.addHandler(btn1,"click",videoplay);
+        EventUtil.addHandler(btn2,"click",videoforward);
+        EventUtil.addHandler(btn3,"click",videorewind);
+   </script>
+   
+
+</body>
+</html>

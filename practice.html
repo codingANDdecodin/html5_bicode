@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+      <audio src="Godi.mp3" type="audio/mp3" controls></audio>
+    <video id="vid" src="52pm.mp4" type="mp4" height="200px" width="180px" muted="" controls></video>
+    <button id="pid">pause</button>
+    <button id="playid">play</button>
+     <script>
+        vid=document.getElementById("vid")
+        console.log(vid)
+        const puasevid=()=>{
+            vid.pause();
+            console.log("clicked")
+            
+        }
+        const playvid=()=>{
+            vid.play();
+            console.log("clicked")
+          
+            const inter=setInterval(()=>{
+                    let date=new Date();
+                console.log(vid.currentTime)
+
+                if(vid.currentTime>=15){
+                clearInterval(inter);
+                }
+            },1000)
+        }
+         document.getElementById("pid").onclick=puasevid;
+
+         document.getElementById("playid").onclick=playvid;
+    </script> 
+
+    <script>
+      
+    </script>
+</body> -->
+
+<!-- <body>
+    
+    <form action="" name="myForm">
+        <label>name:</label>
+        <input type="text" name="myname">
+        <label>email:</label>
+        <input type="email" name="myemail">
+        <label>passward:</label>
+        <input type="password" name="mypassword">
+         <input type="button" value="set cookie" onclick="setCookie()">
+         <input type="button" value="get cookie" onclick="getCookie()">
+    </form>
+    <script>
+        const setCookie=()=>{
+           
+            document.cookie="myname="+document.myForm.myname.value;
+            document.cookie="myemail="+document.myForm.myemail.value+"; max-age="+60*60*24*7;
+            document.cookie="mypassword="+document.myForm.mypassword.value+"; max-age="+60*60*24*7;
+          
+        }
+        const getCookie=()=>{
+            let cookiesArray=document.cookie.split(";")
+           
+        
+            for(let i=0;i<cookiesArray.length;i++){
+                const valueArray=cookiesArray[i].split("=");
+                
+               
+                if(valueArray[0].trim()=="myname"){
+                      console.log(valueArray[1])
+                      document.myForm.myname.value=valueArray[1];
+                }else if(valueArray[0].trim()=="myemail"){
+                    document.myForm.myemail.value=valueArray[1]
+                }
+                else if(valueArray[0].trim()=="mypassword"){
+                    document.myForm.mypassword.value=valueArray[1]
+                }
+            }
+
+         }
+     
+    </script>
+</body> -->
+<!-- <body>
+   
+    <button id="btn">set local storage</button>
+   <button id="btn2">remove all item</button>
+    <script>
+        console.log("hiii")
+       var btnid=document.getElementById("btn");
+       var  btnid2=document.getElementById("btn2")
+ 
+
+
+       var btnHandlr=()=>{
+        localStorage.setItem("ajit","pune");
+        localStorage.setItem("sai","khed");
+        localStorage.setItem("DIDI","karpudi");
+
+        console.log(localStorage.getItem("ajit"));
+        console.log(localStorage.getItem("sai"));
+        console.log(localStorage.getItem("DIDI"))
+       }
+       var removeHandler=()=>{
+        localStorage.clear()
+        console.log(localStorage.getItem("ajit"));
+        console.log(localStorage.getItem("sai"));
+        console.log(localStorage.getItem("DIDI"))
+       }
+       btnid2.addEventListener("click",removeHandler)
+       btnid.onclick=btnHandlr;
+    </script>
+</body> -->
+
+<!-- <body>
+    <button id="click">click</button>
+    <div id="result"></div>
+
+    <script>
+        var btnid=document.getElementById("click");
+        var result=document.getElementById("result");
+
+        function fun(){
+            if(Storage!==undefined){
+                if(sessionStorage.clickCounter){
+                    sessionStorage.clickCounter=Number(sessionStorage.clickCounter)+1;
+                }else{
+                    sessionStorage.clickCounter=1;
+                }
+            }
+            result.innerHTML="click counter is= "+sessionStorage.clickCounter;            
+        }
+        btnid.onclick=fun;
+    </script>
+</body> -->
+<!-- <body>
+    <button id="click">click</button>
+    <button id="click2">click2</button>
+    <div id="result"></div>
+    <script>
+          var btnid=document.getElementById("click");
+          var btnid2=document.getElementById("click2");
+        var result=document.getElementById("result");
+
+        function fun(){
+            if(Storage!==undefined){
+                sessionStorage.setItem("clickConter",10);
+            }
+            result.innerHTML="click counter is= "+sessionStorage.clickCounter;            
+        }
+        function fun2(){
+         var n=Number(sessionStorage.clickCounter);
+         sessionStorage.clickCounter=n+1;
+        }
+        btnid.onclick=fun;
+        btnid2.onclick=fun2;
+
+    </script>
+</body> -->
+
+<body>
+    <ul id="ul" draggable="true" ondragstart="fun1(event)">
+         <li>math</li>
+         <li>math</li>
+         <li>math</li>
+         <li>math</li>
+    </ul>
+    <div id="mydiv" ondrop="fun2(event)" ondragover="dragover2(event)"></div>
+    <script>
+
+        function fun1(event){
+            
+            event.dataTransfer.setData("text",event.target.textContent);
+            console.log("ok fun1")
+        }
+    
+        function dragover2(event){
+                event.preventDefault();
+            }
+    
+        function fun2(event){
+            
+            var data=event.dataTransfer.getData("text");
+            event.target.innerHTML+=data
+            console.log("ok fun2")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cookies</h1>
+    <form action="" name="myform">
+        name:<input type="text" name="name"><br><br>
+        email:<input type="email" name="email"><br><br>
+        language:<input type="text" name="lang"><br><br>
+
+        <input type="button" value="set cookie" name="set" onclick="setCookies()">
+
+        <input type="button" value="get cookies" name="get" onclick="getCookies()">
+
+    </form>
+    <script>
+        function setCookies(){
+            document.cookie="name="+document.myform.name.value;
+            //name shop will be not use this form as r rtriving from form whether user will input
+            //u must know form will input
+            document.cookie="email="+document.myform.email.value +";max-age"+60*60*24*10;
+            document.cookie="language="+document.myform.lang.value+";max-age="+60*60*24*10;
+        }
+        alert(document.cookie);//to read set//cookies and o/p is follow name=sachin email=sachin@email.com lanuage=marathi
+        //to read cookies
+        function getCookies(){
+            var cookiesArray=document.cookie.split(";");
+            // console.log(cookiesArray);
+            //after cliking on get cookies button  u can on console as an array
+
+            for(var i=0;i<cookiesArray.length;i++){
+                //for retriving sachin  as alone not with name
+                var valueArray=cookiesArray[i].split("=");
+                console.log(valueArray);//to cheak
+                if(valueArray[0].trim()=="name"){
+                    document.myform.name.value=valueArray[1];
+                }
+                else if(valueArray[0].trim()=="email"){
+                    document.myform.email.value=valueArray[1];
+                }
+                else if(valueArray[0].trim()=="language"){
+                    document.myform.lang.value=valueArray[1];
+                }
+            }
+        }
+    </script>
+</body>
+</html>

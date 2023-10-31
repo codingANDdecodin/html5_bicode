@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid;"></canvas>
+
+    <script>
+
+        window.onload=canvas;
+        function canvas(){
+            var mycanvas=document.getElementById("mycanvas");
+            //if(mycanvas && mycanvas.getContext("2d")){
+                
+           // }
+            var context=mycanvas.getContext("2d");
+
+            //context.translate(100,200);
+            //context.lineWidth='6';
+            context.beginPath();
+            context.moveTo(10,150);//(10,150)
+            context.quadraticCurveTo(40,50,180,190);//((x and y for cures)x,y,(x and y for secound point)x,y)
+            context.lineWidth='5';
+            context.strokeStyle='red';
+            context.fillStyle='yellow';
+            context.stroke();
+            context.fill();
+
+        }
+    </script>
+</body>
+</html>

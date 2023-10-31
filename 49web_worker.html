@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>count number:<output id="result" ></output></p>
+
+    <button onclick="startWorker()" >start worker</button>
+
+    <button onclick="stopWorker()">stop worker</button>
+
+    <script>
+        var w;
+        function startWorker(){
+            if(typeof(Worker)!=="undefined"){
+                if(typeof(w)=="undefined"){
+                    w=new Worker("50webdemonew.js");
+                }
+                w.onmessage=function(event){
+                    document.getElementById("result").innerHTML=event.data;
+                    console.log(event);
+                };
+            }else{
+                document.getElementById("result").innerHTML="sorry web worker is not support";
+            }
+        }
+
+        function stopWorker(){
+            w.terminate();
+            w=undefined;   
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>how to trace the location</h1>
+    <button onclick="getlocation()">get location </button>
+    <div id="output"></div>
+    <script>
+        var x=document.getElementById('output');
+
+        function getlocation(){
+            //alert("hello");//for testing purpose
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }else{
+                x.innerHTML="not supporting";
+            }
+            //we will print the value we got in postion object
+            function showPosition(postion){
+                var localAPI= "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+position.coords.longitude+"&sensor=true";
+
+                x.innerHTML=localAPI;
+                $.get({
+                    //it take object .we pass url throught object
+                    url :localAPI;
+                    success:function(data){
+                        console.log(data);
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+</html>
